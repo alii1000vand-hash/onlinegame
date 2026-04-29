@@ -1,1 +1,62 @@
-let _0x2f_0x50e;export const config={"runtime":"\u0065\u0064\u0067\u0065"};_0x2f_0x50e=829665^829664;let _0x89c9f;const TARGET_BASE=(process['\u0065\u006E\u0076']['\u0054\u0041\u0052\u0047\u0045\u0054\u005F\u0044\u004F\u004D\u0041\u0049\u004E']||"")['\u0072\u0065\u0070\u006C\u0061\u0063\u0065'](new RegExp("$/\\".split("").reverse().join(""),""),"");_0x89c9f="cjgfbc".split("").reverse().join("");var _0x2515cf=(263194^263194)+(596113^596121);const STRIP_HEADERS=new Set(["tsoh".split("").reverse().join(""),"\u0063\u006F\u006E\u006E\u0065\u0063\u0074\u0069\u006F\u006E","\u006B\u0065\u0065\u0070\u002D\u0061\u006C\u0069\u0076\u0065","etacitnehtua-yxorp".split("").reverse().join(""),"noitazirohtua-yxorp".split("").reverse().join(""),"\u0074\u0065","reliart".split("").reverse().join(""),"gnidocne-refsnart".split("").reverse().join(""),"\u0075\u0070\u0067\u0072\u0061\u0064\u0065","\u0066\u006F\u0072\u0077\u0061\u0072\u0064\u0065\u0064","\u0078\u002D\u0066\u006F\u0072\u0077\u0061\u0072\u0064\u0065\u0064\u002D\u0068\u006F\u0073\u0074","otorp-dedrawrof-x".split("").reverse().join(""),"\u0078\u002D\u0066\u006F\u0072\u0077\u0061\u0072\u0064\u0065\u0064\u002D\u0070\u006F\u0072\u0074"]);_0x2515cf=(368487^368495)+(128313^128318);async function _0xce1g6c(req){if(!TARGET_BASE){return new Response("tes ton si NIAMOD_TEGRAT :derugifnocsiM".split("").reverse().join(""),{"status":500});}try{let _0x282ecd;const _0xfg0b3d=req['\u0075\u0072\u006C']['\u0069\u006E\u0064\u0065\u0078\u004F\u0066']("\u002F",608497^608505);_0x282ecd=(837366^837363)+(934650^934642);let _0x44eef;const _0x_0x2b2=_0xfg0b3d===-(747885^747884)?TARGET_BASE+"\u002F":TARGET_BASE+req['\u0075\u0072\u006C']['\u0073\u006C\u0069\u0063\u0065'](_0xfg0b3d);_0x44eef=311438^311437;let _0x2ab;const _0xa11d2a=new Headers();_0x2ab=376244^376246;var _0x9eb=(668339^668338)+(561697^561701);let _0xfag3fb=null;_0x9eb=320881^320884;for(const[k,v]of req['\u0068\u0065\u0061\u0064\u0065\u0072\u0073']){if(STRIP_HEADERS['\u0068\u0061\u0073'](k))continue;if(k['\u0073\u0074\u0061\u0072\u0074\u0073\u0057\u0069\u0074\u0068']("-lecrev-x".split("").reverse().join("")))continue;if(k==="\u0078\u002D\u0072\u0065\u0061\u006C\u002D\u0069\u0070"){_0xfag3fb=v;continue;}if(k==="rof-dedrawrof-x".split("").reverse().join("")){if(!_0xfag3fb)_0xfag3fb=v;continue;}_0xa11d2a['\u0073\u0065\u0074'](k,v);}if(_0xfag3fb)_0xa11d2a['\u0073\u0065\u0074']("rof-dedrawrof-x".split("").reverse().join(""),_0xfag3fb);var _0x7106cb=(466237^466237)+(507546^507544);const _0x8fef=req['\u006D\u0065\u0074\u0068\u006F\u0064'];_0x7106cb='\u006F\u0068\u006D\u006C\u006B\u0062';const _0x931efe=_0x8fef!=="\u0047\u0045\u0054"&&_0x8fef!=="\u0048\u0045\u0041\u0044";return await fetch(_0x_0x2b2,{'\u006D\u0065\u0074\u0068\u006F\u0064':_0x8fef,'\u0068\u0065\u0061\u0064\u0065\u0072\u0073':_0xa11d2a,'\u0062\u006F\u0064\u0079':_0x931efe?req['\u0062\u006F\u0064\u0079']:undefined,"duplex":"half",'\u0072\u0065\u0064\u0069\u0072\u0065\u0063\u0074':"manual"});}catch(err){console['\u0065\u0072\u0072\u006F\u0072']("\u0072\u0065\u006C\u0061\u0079\u0020\u0065\u0072\u0072\u006F\u0072\u003A",err);return new Response("deliaF lennuT :yawetaG daB".split("").reverse().join(""),{'\u0073\u0074\u0061\u0074\u0075\u0073':502});}}export{_0xce1g6c as default};
+export const config = { runtime: "edge" };
+
+const TARGET_BASE = (process.env.TARGET_DOMAIN || "").replace(/\/$/, "");
+
+const STRIP_HEADERS = new Set([
+  "host",
+  "connection",
+  "keep-alive",
+  "proxy-authenticate",
+  "proxy-authorization",
+  "te",
+  "trailer",
+  "transfer-encoding",
+  "upgrade",
+  "forwarded",
+  "x-forwarded-host",
+  "x-forwarded-proto",
+  "x-forwarded-port",
+]);
+
+export default async function handler(req) {
+  if (!TARGET_BASE) {
+    return new Response("Misconfigured: TARGET_DOMAIN is not set", { status: 500 });
+  }
+
+  try {
+    const pathStart = req.url.indexOf("/", 8);
+    const targetUrl =
+      pathStart === -1 ? TARGET_BASE + "/" : TARGET_BASE + req.url.slice(pathStart);
+
+    const out = new Headers();
+    let clientIp = null;
+    for (const [k, v] of req.headers) {
+      if (STRIP_HEADERS.has(k)) continue;
+      if (k.startsWith("x-vercel-")) continue;
+      if (k === "x-real-ip") {
+        clientIp = v;
+        continue;
+      }
+      if (k === "x-forwarded-for") {
+        if (!clientIp) clientIp = v;
+        continue;
+      }
+      out.set(k, v);
+    }
+    if (clientIp) out.set("x-forwarded-for", clientIp);
+
+    const method = req.method;
+    const hasBody = method !== "GET" && method !== "HEAD";
+
+    return await fetch(targetUrl, {
+      method,
+      headers: out,
+      body: hasBody ? req.body : undefined,
+      duplex: "half",
+      redirect: "manual",
+    });
+  } catch (err) {
+    console.error("relay error:", err);
+    return new Response("Bad Gateway: Tunnel Failed", { status: 502 });
+  }
+}
