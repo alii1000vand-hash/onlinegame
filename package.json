@@ -1,0 +1,7 @@
+{
+  "name": "OnlineGame",
+  "version": "1.0.0",
+  "description": "A free online game called mario",
+  "private": true,
+  "license": "MIT"
+}
